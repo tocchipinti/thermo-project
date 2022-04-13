@@ -1,0 +1,37 @@
+{
+  "name": "thermo-iot-simulator",
+  "version": "1.0.0",
+  "description": "A simple cli tool that generates temperatures and puts it on a mqtt topic.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "bin": "dist/index.js",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --clean --minify",
+    "dev": "yarn build --watch",
+    "prepublish": "yarn build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tocchipinti/thermo-project.git"
+  },
+  "author": "Tim Occhipinti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tocchipinti/thermo-project/issues"
+  },
+  "homepage": "https://github.com/tocchipinti/thermo-project#readme",
+  "dependencies": {
+    "cac": "^6.7.12",
+    "mqtt": "^4.3.7",
+    "tsup": "^5.12.5",
+    "typescript": "^4.6.3"
+  }
+}
